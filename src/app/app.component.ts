@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'templateDrivenForms';
+  @ViewChild('f') signupForm: NgForm;
+  defaultQuestion='pet';
+  answer:string;
+
+
+
+  suggestUserName() {
+    const suggestedName = 'Superuser';
+  }
+  // onSubmit(form:NgForm) {
+  //   console.log(form.value)
+  // }
+
+
+
+  onSubmit(){
+    console.log(this.signupForm)
+
+  }
 }
